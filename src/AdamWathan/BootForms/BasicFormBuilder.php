@@ -67,16 +67,16 @@ class BasicFormBuilder
         return $this->formGroup($label, $name, $control);
     }
 
-    public function checkbox($label, $name)
+    public function checkbox($label, $name, $value = 1)
     {
-        $control = $this->builder->checkbox($name);
+        $control = $this->builder->checkbox($name, $value);
 
         return $this->checkGroup($label, $name, $control);
     }
 
-    public function inlineCheckbox($label, $name)
+    public function inlineCheckbox($label, $name, $value = 1)
     {
-        return $this->checkbox($label, $name)->inline();
+        return $this->checkbox($label, $name, $value)->inline();
     }
 
     protected function checkGroup($label, $name, $control)

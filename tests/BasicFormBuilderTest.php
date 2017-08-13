@@ -228,8 +228,8 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
     public function testRenderCheckbox()
     {
-        $expected = '<div class="checkbox"><label class="control-label"><input type="checkbox" name="terms" value="1">Agree to Terms</label></div>';
-        $result = $this->form->checkbox('Agree to Terms', 'terms')->render();
+        $expected = '<div class="checkbox"><label class="control-label"><input type="checkbox" name="terms" value="otherValue">Agree to Terms</label></div>';
+        $result = $this->form->checkbox('Agree to Terms', 'terms', 'otherValue')->render();
         $this->assertEquals($expected, $result);
     }
 
@@ -345,8 +345,8 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
     public function testRenderInlineCheckboxFallback()
     {
-        $expected = '<label class="checkbox-inline"><input type="checkbox" name="terms" value="1">Agree to Terms</label>';
-        $result = $this->form->inlineCheckbox('Agree to Terms', 'terms')->render();
+        $expected = '<label class="checkbox-inline"><input type="checkbox" name="terms" value="2">Agree to Terms</label>';
+        $result = $this->form->inlineCheckbox('Agree to Terms', 'terms', 2)->render();
         $this->assertEquals($expected, $result);
     }
 
